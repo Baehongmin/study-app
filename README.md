@@ -32,3 +32,58 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+기능
+
+글 (CRUD)
+좋아요 (R,INCREASE)
+싫어요 (R,INCREASE)
+댓글 (CRD)
+대댓글 (CRD)
+
+세부기능
+
+글 리스트
+댓글 리스트
+대댓 리스트
+
+Model
+
+글(Article)
+{
+    id:string,
+    *title : string,
+    *contents : string,
+    date: date,
+    writer: string,
+    likeCount: number,
+    unLikeCount: number
+}
+
+글 리스트(Article List)
+{
+    Article,
+    replyCount: number,
+    currentPage: number,
+    totalPage: number,
+    hasNext:boolean
+}
+
+댓글(Reply)
+{
+    id: string,
+    content : string,
+    likeCount: number,
+    unLikeCount: number,
+    *Writer: string,
+    isParent:boolean
+    Reply
+}
+
+댓글 리스트(Reply List)
+{
+    Reply,
+    currentPage: number,
+    totalPage: number,
+}
