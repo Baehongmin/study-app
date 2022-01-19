@@ -1,10 +1,9 @@
-import { fetchArticle } from "../network/Apps"
+import Link from "next/link";
 
-export default function Home() {
-  fetchArticle().then((content) => {
-    console.log(content)
-  })
+export default function  Home() {
   return (
-    <div> HELLO WORLD STUDY </div>
+    <div>  
+      <Link href="/study">HELLO WORLD STUDY</Link>
+    </div>
   )
 }
